@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import validateRegisterForm from './validateForm';
+import './index.css'
 
 const FormHandling = () => {
 
@@ -50,7 +51,8 @@ return(
 
                 <div>
                     <label>Message</label>
-                    <input type="text" name="message" onChange={handleChange} value={values.message}/>
+                    <textarea rows="5" cols="50" name='message' value={values.message}></textarea>
+                    {errors.message && <p>{errors.message}</p>}
                 </div>
 
                 <button onClick={handleSubmit}>Submit</button>
